@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawgstagram</title>
-    <link rel="icon" href="https://fav.mhciael.com/🐶">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlockTag Discover</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Dawgstagram</h1>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2 class="logo">BlockTag</h2>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="#">Feed</a>
+        <a class="nav-link active" href="#">Discover</a>
+        <a class="nav-link" href="#">Groups</a>
+        <a class="nav-link" href="#">Profile</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="discover-card">
+        <h1>Discover Players</h1>
+        <form id="search-form" class="search-row">
+          <input
+            id="username-input"
+            class="search-input"
+            type="text"
+            placeholder="Username, UUID, or skin URL (with UUID)..."
+            autocomplete="off"
+            required
+          >
+          <button class="search-btn" type="submit">Go</button>
+        </form>
+        <h2 class="results-heading">Results</h2>
+        <div id="search-results" class="results-grid" role="region" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+  <script src="js/discover.js"></script>
 </body>
 </html>
