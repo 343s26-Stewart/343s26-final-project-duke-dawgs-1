@@ -115,7 +115,7 @@ function renderPlayerCard(profile) {
   img.className = "player-card__skin";
   img.alt = `Skin for ${profile.name}`;
   img.loading = "lazy";
-  img.src = `https://crafatar.com/avatars/${encodeURIComponent(toUndashedUuid(profile.id))}?size=128&overlay`;
+  img.src = `https://mc-heads.net/avatar/${encodeURIComponent(toUndashedUuid(profile.id))}/128`;
 
   const placeholder = document.createElement("div");
   placeholder.className = "player-card__skin-placeholder";
@@ -206,7 +206,7 @@ function setError(payload) {
 async function fetchMojangViaProxy(endpointUrl) {
   const proxyUrls = [
     `https://api.allorigins.win/raw?url=${encodeURIComponent(endpointUrl)}`,
-    `https://corsproxy.io/?${encodeURIComponent(endpointUrl)}`
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(endpointUrl)}`
   ];
 
   let response;

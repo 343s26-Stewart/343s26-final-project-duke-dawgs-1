@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s -w \"\\\\nHTTP_STATUS: %{http_code}\\\\n\" \"https://api.allorigins.win/raw?url=https%3A%2F%2Fapi.mojang.com%2Fusers%2Fprofiles%2Fminecraft%2FAyeethemba\" --max-time 10)",
+      "Bash(curl -s -w \"\\\\nHTTP_STATUS: %{http_code}\\\\n\" \"https://corsproxy.io/?https%3A%2F%2Fapi.mojang.com%2Fusers%2Fprofiles%2Fminecraft%2FAyeethemba\" --max-time 10)",
+      "Bash(curl -s -w \"\\\\nHTTP_STATUS: %{http_code}\\\\n\" \"https://api.mojang.com/users/profiles/minecraft/Ayeethemba\" --max-time 10)",
+      "Bash(curl -s -D - \"https://api.mojang.com/users/profiles/minecraft/Ayeethemba\" --max-time 10)",
+      "Bash(curl -s -D - -H \"Origin: http://localhost:8080\" \"https://api.mojang.com/users/profiles/minecraft/Ayeethemba\" --max-time 10)",
+      "Bash(curl -s -D - \"https://crafatar.com/avatars/583eceed27c8483bb23a7337bf9223e5?size=128&overlay\" --max-time 10)",
+      "Bash(curl -s -D - \"https://mc-heads.net/avatar/583eceed27c8483bb23a7337bf9223e5/128\" --max-time 10)",
+      "Bash(curl -s -D - \"https://mineskin.eu/avatar/Ayeethemba/128\" --max-time 10)"
+    ]
+  }
+}

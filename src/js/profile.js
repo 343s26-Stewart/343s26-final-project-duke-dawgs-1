@@ -36,7 +36,7 @@
       skinImg.className = "following-card__skin";
       skinImg.alt = "Skin for " + player.name;
       skinImg.loading = "lazy";
-      skinImg.src = "https://crafatar.com/avatars/" + encodeURIComponent(player.id) + "?size=48&overlay";
+      skinImg.src = "https://mc-heads.net/avatar/" + encodeURIComponent(player.id) + "/48";
 
       const name = document.createElement("span");
       name.className = "following-card__name";
