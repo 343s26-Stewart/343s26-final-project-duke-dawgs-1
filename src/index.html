@@ -3,40 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlockTag Discover</title>
+  <title>BlockTag — Home</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="app-layout">
     <aside class="sidebar">
-      <h2 class="logo">BlockTag</h2>
-      <nav class="nav-links" aria-label="Primary">
-        <a class="nav-link" href="#">Feed</a>
-        <a class="nav-link active" href="#">Discover</a>
-        <a class="nav-link" href="#">Groups</a>
-        <a class="nav-link" href="#">Profile</a>
+      <span class="logo" aria-hidden="true">BlockTag</span>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="feed.html">Feed</a>
+        <a class="nav-link" href="discover.html">Discover</a>
+        <a class="nav-link" href="groups.html">Groups</a>
+        <a class="nav-link" href="profile.html">Profile</a>
       </nav>
     </aside>
 
-    <main class="main-content">
-      <section class="discover-card">
-        <h1>Discover Players</h1>
-        <form id="search-form" class="search-row">
-          <input
-            id="username-input"
-            class="search-input"
-            type="text"
-            placeholder="Username, UUID, or skin URL (with UUID)..."
-            autocomplete="off"
-            required
-          >
-          <button class="search-btn" type="submit">Go</button>
-        </form>
-        <h2 class="results-heading">Results</h2>
-        <div id="search-results" class="results-grid" role="region" aria-live="polite"></div>
+    <main id="main-content" class="main-content">
+      <section class="page-card">
+        <header>
+          <h1>Welcome to BlockTag</h1>
+          <p class="subtitle">Your hub for the Minecraft community. Discover players, share posts, and find your crew.</p>
+        </header>
+
+        <section class="stats-row" aria-label="Your stats">
+          <div class="stat-box">
+            <span id="stat-following" class="stat-number">0</span>
+            <span class="stat-label">Following</span>
+          </div>
+          <div class="stat-box">
+            <span id="stat-posts" class="stat-number">0</span>
+            <span class="stat-label">Posts</span>
+          </div>
+          <div class="stat-box">
+            <span id="stat-groups" class="stat-number">0</span>
+            <span class="stat-label">Groups</span>
+          </div>
+        </section>
+
+        <section aria-label="Quick actions">
+          <h2>Get Started</h2>
+          <div class="action-grid">
+            <a href="discover.html" class="action-card">
+              <h3>Discover Players</h3>
+              <p>Search for Minecraft players by username or UUID.</p>
+            </a>
+            <a href="feed.html" class="action-card">
+              <h3>Browse Feed</h3>
+              <p>See posts from the community and find gameplay sessions.</p>
+            </a>
+            <a href="groups.html" class="action-card">
+              <h3>Join Groups</h3>
+              <p>Create or join groups of players with shared interests.</p>
+            </a>
+            <a href="profile.html" class="action-card">
+              <h3>Your Profile</h3>
+              <p>Customize your tags, description, and social links.</p>
+            </a>
+          </div>
+        </section>
+
+        <section aria-label="Data management">
+          <h2>Data</h2>
+          <div class="btn-row">
+            <button id="export-btn" class="btn-primary" type="button">Export Data (JSON)</button>
+            <label class="btn-secondary btn-file-label" tabindex="0" role="button">
+              Import Data
+              <input id="import-input" type="file" accept=".json" class="visually-hidden">
+            </label>
+          </div>
+          <p id="data-msg" class="form-msg" role="status"></p>
+        </section>
       </section>
     </main>
   </div>
-  <script src="js/discover.js"></script>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 BlockTag &mdash; Duke Dawgs. Built for CS 343.</p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

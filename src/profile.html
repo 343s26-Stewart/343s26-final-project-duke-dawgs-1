@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlockTag — Profile</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <span class="logo" aria-hidden="true">BlockTag</span>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="feed.html">Feed</a>
+        <a class="nav-link" href="discover.html">Discover</a>
+        <a class="nav-link" href="groups.html">Groups</a>
+        <a class="nav-link active" href="profile.html">Profile</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="main-content">
+      <section class="page-card">
+        <header>
+          <h1>My Profile</h1>
+        </header>
+
+        <section aria-label="Edit profile">
+          <h2>Edit Profile</h2>
+          <form id="profile-form" class="form-stack">
+            <label for="profile-desc">Description</label>
+            <textarea id="profile-desc" class="form-input" rows="3" placeholder="Tell others about yourself..."></textarea>
+
+            <fieldset class="tag-fieldset">
+              <legend>Your Tags</legend>
+              <div class="tag-checks" id="profile-tags">
+                <label><input type="checkbox" name="tag" value="Builder"> Builder</label>
+                <label><input type="checkbox" name="tag" value="Casual"> Casual</label>
+                <label><input type="checkbox" name="tag" value="PvP"> PvP</label>
+                <label><input type="checkbox" name="tag" value="Modded"> Modded</label>
+                <label><input type="checkbox" name="tag" value="Survival"> Survival</label>
+                <label><input type="checkbox" name="tag" value="Creative"> Creative</label>
+                <label><input type="checkbox" name="tag" value="Minigames"> Minigames</label>
+                <label><input type="checkbox" name="tag" value="Hardcore"> Hardcore</label>
+              </div>
+            </fieldset>
+
+            <label for="profile-discord">Discord</label>
+            <input id="profile-discord" type="text" class="form-input" placeholder="username#1234">
+
+            <label for="profile-youtube">YouTube</label>
+            <input id="profile-youtube" type="url" class="form-input" placeholder="https://youtube.com/@channel">
+
+            <p id="profile-msg" class="form-msg" role="status"></p>
+            <button type="submit" class="btn-primary">Save Profile</button>
+          </form>
+        </section>
+
+        <section aria-label="Followed players">
+          <h2>Following</h2>
+          <div id="following-list" role="list" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 BlockTag &mdash; Duke Dawgs. Built for CS 343.</p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

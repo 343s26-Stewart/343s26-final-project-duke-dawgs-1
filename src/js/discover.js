@@ -149,11 +149,22 @@ function renderPlayerCard(profile) {
 
   const followBtn = document.createElement("button");
   followBtn.type = "button";
-  followBtn.className = "btn-primary";
-  followBtn.textContent = "Follow";
+  followBtn.className = Store.isFollowing(profile.id) ? "btn-secondary" : "btn-primary";
+  followBtn.textContent = Store.isFollowing(profile.id) ? "Unfollow" : "Follow";
+  followBtn.addEventListener("click", function () {
+    if (Store.isFollowing(profile.id)) {
+      Store.removeFollowing(profile.id);
+      followBtn.textContent = "Follow";
+      followBtn.className = "btn-primary";
+    } else {
+      Store.addFollowing({ name: profile.name, id: profile.id });
+      followBtn.textContent = "Unfollow";
+      followBtn.className = "btn-secondary";
+    }
+  });
 
-  const profileBtn = document.createElement("button");
-  profileBtn.type = "button";
+  const profileBtn = document.createElement("a");
+  profileBtn.href = "profile.html";
   profileBtn.className = "btn-secondary";
   profileBtn.textContent = "View profile";
 

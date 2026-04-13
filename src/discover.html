@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlockTag — Discover</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <span class="logo" aria-hidden="true">BlockTag</span>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="feed.html">Feed</a>
+        <a class="nav-link active" href="discover.html">Discover</a>
+        <a class="nav-link" href="groups.html">Groups</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="main-content">
+      <section class="page-card">
+        <header>
+          <h1>Discover Players</h1>
+        </header>
+        <form id="search-form" class="search-row">
+          <input
+            id="username-input"
+            class="search-input"
+            type="text"
+            placeholder="Username, UUID, or skin URL (with UUID)..."
+            autocomplete="off"
+            required
+          >
+          <button class="search-btn" type="submit">Go</button>
+        </form>
+        <h2 class="results-heading">Results</h2>
+        <div id="search-results" class="results-grid" role="region" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 BlockTag &mdash; Duke Dawgs. Built for CS 343.</p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/discover.js"></script>
+</body>
+</html>
