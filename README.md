@@ -2,7 +2,7 @@
 
 **Duke Dawgs**
 
-**Student Names:** Logan Kasmier, Layla Aure
+**Student Names:** Logan Kasmier, Layla Aure, Christopher Sledd
 
 ---
 
