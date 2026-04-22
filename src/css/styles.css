@@ -15,6 +15,28 @@
     --danger-hover: #872626;
 }
 
+:root.dark-mode {
+    --nav-green: #2b3f1e;
+    --nav-green-dark: #569e28;
+    --sand: #f5efdc;
+    --oak: #caa884;
+    --sky: #6cb4e8;
+    --card-bg: rgba(20, 20, 20, 0.92);
+    --danger: #a83232;
+    --danger-hover: #872626;
+
+    .stat-box {
+        background: rgb(9, 20, 31);
+    }
+    .action-card {
+        background: rgb(34, 43, 51);
+    }
+    body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+        url("../images/17346505-stonebrickscomparison_xl.webp");
+}
+}
+
 * {
     box-sizing: border-box;
 }

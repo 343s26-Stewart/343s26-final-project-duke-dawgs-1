@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlockTag — Groups</title>
+  <title>BlockTag — Settings</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -16,35 +16,21 @@
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="feed.html">Feed</a>
         <a class="nav-link" href="discover.html">Discover</a>
-        <a class="nav-link active" href="groups.html">Groups</a>
+        <a class="nav-link" href="groups.html">Groups</a>
         <a class="nav-link" href="profile.html">Profile</a>
-        <a class="nav-link" href="settings.html">Settings</a>
+        <a class="nav-link active" href="settings.html">Settings</a>
       </nav>
     </aside>
 
     <main id="main-content" class="main-content">
       <section class="page-card">
         <header>
-          <h1>Groups</h1>
+          <h1>Settings</h1>
         </header>
 
-        <section aria-label="Create a group">
-          <h2>Create Group</h2>
-          <form id="group-form" class="form-stack">
-            <label for="group-name">Group Name</label>
-            <input id="group-name" type="text" class="form-input" required placeholder="e.g. SMP Builders">
-
-            <label for="group-your-name">Your Name</label>
-            <input id="group-your-name" type="text" class="form-input" required placeholder="Minecraft username">
-
-            <p id="group-form-msg" class="form-msg" role="alert"></p>
-            <button type="submit" class="btn-primary">Create</button>
-          </form>
-        </section>
-
-        <section aria-label="Your groups">
-          <h2>All Groups</h2>
-          <div id="groups-list" role="list" aria-live="polite"></div>
+        <section aria-label="Settings">
+          <h2>Local Preferences</h2>
+          <label><input type="checkbox" id="dark-mode-check"> Dark Mode</label>
         </section>
       </section>
     </main>
@@ -55,7 +41,7 @@
   </footer>
 
   <script src="js/storage.js"></script>
-  <script src="js/groups.js"></script>
+  <script src="js/settings.js"></script>
   <script src="js/applyDarkMode.js"></script>
 </body>
 </html>

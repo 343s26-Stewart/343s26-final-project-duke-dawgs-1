@@ -4,7 +4,8 @@ const Store = (function () {
     following: "blocktag_following",
     profile: "blocktag_profile",
     posts: "blocktag_posts",
-    groups: "blocktag_groups"
+    groups: "blocktag_groups",
+    settings: "blocktag_settings"
   };
 
   function read(key, fallback) {
@@ -149,6 +150,15 @@ const Store = (function () {
     if (data.groups) write(KEYS.groups, data.groups);
   }
 
+  /* ----- Settings ----- */
+  function getSettings() {
+    return read(KEYS.settings, {"dark-mode": false});
+  }
+
+  function setSettings(settingsObject) {
+    write(KEYS.settings, settingsObject);
+  }
+
   return {
     getFollowing: getFollowing,
     isFollowing: isFollowing,
@@ -166,6 +176,8 @@ const Store = (function () {
     joinGroup: joinGroup,
     leaveGroup: leaveGroup,
     exportAll: exportAll,
-    importAll: importAll
+    importAll: importAll,
+    getSettings: getSettings,
+    setSettings: setSettings
   };
 })();
