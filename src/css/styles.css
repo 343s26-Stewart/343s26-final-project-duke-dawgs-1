@@ -277,6 +277,15 @@ body {
     outline-offset: 1px;
 }
 
+#profile-avatar-preview {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid var(--nav-green-dark);
+}
+
 .form-select {
     width: auto;
     min-width: 160px;

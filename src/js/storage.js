@@ -49,7 +49,8 @@ const Store = (function () {
     return read(KEYS.profile, {
       description: "",
       tags: [],
-      links: []
+      links: [],
+      avatar: ""
     });
   }
 

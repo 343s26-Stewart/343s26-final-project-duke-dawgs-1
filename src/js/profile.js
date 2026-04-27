@@ -2,12 +2,22 @@
   const profileForm = document.getElementById("profile-form");
   const followingList = document.getElementById("following-list");
   const profileMsg = document.getElementById("profile-msg");
+  const avatarInput = document.getElementById("profile-avatar");
+  const avatarPreview = document.getElementById("profile-avatar-preview");
 
   function loadProfile() {
     const profile = Store.getProfile();
     document.getElementById("profile-desc").value = profile.description || "";
     document.getElementById("profile-discord").value = (profile.links && profile.links[0]) || "";
     document.getElementById("profile-youtube").value = (profile.links && profile.links[1]) || "";
+
+    if (profile.avatar) {
+      avatarPreview.src = profile.avatar;
+      avatarPreview.style.display = "block";
+    } else {
+      avatarPreview.removeAttribute("src");
+      avatarPreview.style.display = "none";
+    }
 
     const tags = profile.tags || [];
     document.querySelectorAll('#profile-tags input[type="checkbox"]').forEach(function (cb) {
@@ -58,6 +68,18 @@
     });
   }
 
+  avatarInput.addEventListener("change", function () {
+    const file = avatarInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      avatarPreview.src = e.target.result;
+      avatarPreview.style.display = "block";
+    };
+    reader.readAsDataURL(file);
+  });
+
   profileForm.addEventListener("submit", function (e) {
     e.preventDefault();
     profileMsg.textContent = "";
@@ -73,7 +95,8 @@
     Store.saveProfile({
       description: document.getElementById("profile-desc").value.trim(),
       tags: tags,
-      links: [discord, youtube]
+      links: [discord, youtube],
+      avatar: avatarPreview.src || ""
     });
 
     profileMsg.textContent = "Profile saved!";
